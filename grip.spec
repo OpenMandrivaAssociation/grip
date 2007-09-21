@@ -66,7 +66,7 @@ mkdir -p %{buildroot}%{_mandir}/man1
 install -m 644 %SOURCE2 %{buildroot}%{_mandir}/man1/ 
 
 #mdk icons
-install -d %{buildroot}{%_liconsdir,%_miconsdir}
+mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
 ln -s %{_datadir}/pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
 convert -scale 32 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
 convert -scale 16 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
