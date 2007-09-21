@@ -87,7 +87,7 @@ StartupNotify=true
 Categories=GTK;AudioVideo;Audio;Player;
 EOF
 
-%find_lang %{name}
+%find_lang %{name}-2.2
 
 %clean
 rm -rf %{buildroot}
@@ -100,7 +100,7 @@ rm -rf %{buildroot}
 %{clean_menus}
 %{clean_icon_cache hicolor}
 
-%files -f %{name}.lang
+%files -f %{name}-2.2.lang
 %defattr(-,root,root)
 %doc ABOUT-NLS AUTHORS CREDITS README ChangeLog TODO  
 %{_bindir}/*
