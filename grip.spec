@@ -17,7 +17,6 @@ Patch0:		grip-3.1.7-ogg.patch
 Patch1:		grip-3.0.5-blind-write-fix.patch
 Patch2:		grip-3.3.1-desktop.patch
 Patch3:		grip-3.1.9-lame-flac-options.patch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	libgnomeui2-devel
 BuildRequires:	libcurl-devel
 BuildRequires:	vte-devel
