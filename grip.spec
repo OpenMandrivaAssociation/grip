@@ -5,7 +5,7 @@
 Summary:	Grip, a CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	3.3.1
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
