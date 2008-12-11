@@ -21,7 +21,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	libgnomeui2-devel
 BuildRequires:	libcurl-devel
 BuildRequires:	vte-devel
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 Requires:	vorbis-tools
 BuildRequires:	libcdda-devel
 %if %build_id3
