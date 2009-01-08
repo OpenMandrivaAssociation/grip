@@ -1,11 +1,11 @@
-%define build_id3 1
+%define build_id3 0
 %{?_with_id3: %{expand: %%global build_id3 1}}
 %{?_without_id3: %{expand: %%global build_id3 0}}
 
 Summary:	Grip, a CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	3.3.1
-Release:	%mkrel 10
+Release:	%mkrel 11
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
