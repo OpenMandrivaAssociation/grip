@@ -1,0 +1,21 @@
+diff -p -up grip-3.3.1/src/gripcfg.c.options grip-3.3.1/src/gripcfg.c
+--- grip-3.3.1/src/gripcfg.c.options	2005-06-25 20:00:55.000000000 +0200
++++ grip-3.3.1/src/gripcfg.c	2009-01-08 09:53:06.000000000 +0100
+@@ -48,7 +48,7 @@ static Ripper ripper_defaults[]={
+ };
+ 
+ static MP3Encoder encoder_defaults[]={{"bladeenc","-%b -QUIT %w %m","mp3"},
+-				      {"lame","-h -b %b %w %m","mp3"},
++				      {"lame","-h --add-id3v2 --tt \"%n\" --ta \"%a\" --tl \"%d\" --ty \"%y\" --tn \"%t\" --tg \"%G\" -b %b %w %m","mp3"},
+ 				      {"l3enc","-br %b %w %m","mp3"},
+ 				      {"xingmp3enc","-B %b -Q %w","mp3"},
+ 				      {"mp3encode","-p 2 -l 3 -b %b %w %m",
+@@ -57,7 +57,7 @@ static MP3Encoder encoder_defaults[]={{"
+ 				      {"oggenc",
+ 				       "-o %m -a %a -l %d -t %n -b %b -N %t -G %G -d %y %w",
+ 				       "ogg"},
+-				      {"flac","-V -o %m %w","flac"},
++				      {"flac","--best --replay-gain -T title=\"%n\" -T artist=\"%a\" -T album=\"%d\" -T date=\"%y\" -T tracknumber=\"%t\" -T genre=\"%G\"  -o %m %w","flac"},
+ 				      {"other","",""},
+ 				      {"",""}
+ };

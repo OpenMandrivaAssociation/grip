@@ -1,0 +1,13 @@
+--- grip-3.0.5/src/rip.c.chmou	2003-01-15 14:06:24.000000000 +0100
++++ grip-3.0.5/src/rip.c	2003-01-15 14:07:47.000000000 +0100
+@@ -961,7 +961,9 @@
+ 	    unlink(ginfo->rip_delete_file[mycpu]);
+ 	  }
+ 
+-          if(ginfo->doid3 || ginfo->doid3v2)
++	  if((ginfo->doid3 || ginfo->doid3v2) &&
++	     (strstr(ginfo->mp3file[mycpu],".mp3") ||
++	      strstr(ginfo->mp3file[mycpu],".MP3")))
+ 	    ID3Add(ginfo,ginfo->mp3file[mycpu],
+ 		   ginfo->encoded_track[mycpu]);
+ 

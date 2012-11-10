@@ -1,0 +1,19 @@
+--- grip-3.1.7/src/grip.c.tv	2004-03-22 18:02:30.000000000 +0100
++++ grip-3.1.7/src/grip.c	2004-03-22 19:24:03.596531215 +0100
+@@ -828,11 +828,11 @@
+   ginfo->stop_between_tracks=FALSE;
+   *ginfo->wav_filter_cmd='\0';
+   *ginfo->disc_filter_cmd='\0';
+-  ginfo->selected_encoder=1;
+-  strcpy(ginfo->mp3cmdline,"-h -b %b %w %m");
+-  FindExeInPath("lame", ginfo->mp3exename, sizeof(ginfo->mp3exename));
+-  strcpy(ginfo->mp3fileformat,"~/mp3/%A/%d/%n.%x");
+-  strcpy(ginfo->mp3extension,"mp3");
++  ginfo->selected_encoder=6;
++  strcpy(ginfo->mp3cmdline,"-o %m -a %a -l %d -t %n -b %b %w -N %t -G %G -d %y");
++  FindExeInPath("oggenc", ginfo->mp3exename, sizeof(ginfo->mp3exename));
++  strcpy(ginfo->mp3fileformat,"~/mp3/%A/%d/%t_%n.%x");
++  strcpy(ginfo->mp3extension,"ogg");
+   ginfo->mp3nice=0;
+   *ginfo->mp3_filter_cmd='\0';
+   ginfo->delete_wavs=TRUE;
