@@ -5,7 +5,7 @@
 Summary:	Grip, a CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	3.3.1
-Release:	16
+Release:	17
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
@@ -18,7 +18,6 @@ Patch1:		grip-3.0.5-blind-write-fix.patch
 Patch2:		grip-3.3.1-desktop.patch
 Patch3:		grip-3.3.1-lame-flac-options.patch
 Patch4:		grip-3.3.1-literal.patch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	vte-devel
