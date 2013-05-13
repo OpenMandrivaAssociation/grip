@@ -19,12 +19,12 @@ Patch2:		grip-3.3.1-desktop.patch
 Patch3:		grip-3.3.1-lame-flac-options.patch
 Patch4:		grip-3.3.1-literal.patch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:	libgnomeui2-devel
-BuildRequires:	libcurl-devel
+BuildRequires:	pkgconfig(libgnomeui-2.0)
+BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	vte-devel
 BuildRequires:	imagemagick
 Requires:	vorbis-tools
-BuildRequires:	libcdda-devel
+BuildRequires:	cdda-devel = 1:10.2-12:2013.0
 %if %build_id3
 BuildRequires:	libid3-devel
 %endif
