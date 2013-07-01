@@ -2,7 +2,7 @@
 %{?_with_id3: %{expand: %%global build_id3 1}}
 %{?_without_id3: %{expand: %%global build_id3 0}}
 
-Summary:	Grip, a CD player and ripper/MP3-encoder front-end
+Summary:	, a CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	3.3.1
 Release:	17
