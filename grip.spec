@@ -2,10 +2,10 @@
 %{?_with_id3: %{expand: %%global build_id3 1}}
 %{?_without_id3: %{expand: %%global build_id3 0}}
 
-Summary:	, a CD player and ripper/MP3-encoder front-end
+Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	3.3.1
-Release:	17
+Release:	18
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
@@ -61,7 +61,6 @@ bzcat %SOURCE3 > po/de.po
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 644 %SOURCE2 %{buildroot}%{_mandir}/man1/ 
@@ -91,7 +90,6 @@ EOF
 %find_lang %{name}-2.2
 
 %clean
-rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
@@ -106,7 +104,6 @@ rm -rf %{buildroot}
 %endif
 
 %files -f %{name}-2.2.lang
-%defattr(-,root,root)
 %doc ABOUT-NLS AUTHORS CREDITS README ChangeLog TODO  
 %{_bindir}/*
 %{_datadir}/gnome/help/%{name}/
