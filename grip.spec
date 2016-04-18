@@ -1,6 +1,7 @@
 %define build_id3 0
 %{?_with_id3: %{expand: %%global build_id3 1}}
 %{?_without_id3: %{expand: %%global build_id3 0}}
+%define _disable_lto 1
 
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
@@ -23,7 +24,7 @@ BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	vte-devel
 BuildRequires:	imagemagick
 Requires:	vorbis-tools
-BuildRequires:	cdda-devel = 1:10.2-12:2013.0
+BuildRequires:	cdda-devel
 %if %build_id3
 BuildRequires:	libid3-devel
 %endif
@@ -48,6 +49,8 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 bzcat %SOURCE3 > po/de.po
 
 %build
+export CC=gcc
+
 %configure2_5x \
 %if %build_id3
   --enable-id3 \
