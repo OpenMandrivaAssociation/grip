@@ -6,7 +6,7 @@
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	3.3.1
-Release:	19
+Release:	20
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
@@ -19,6 +19,8 @@ Patch1:		grip-3.0.5-blind-write-fix.patch
 Patch2:		grip-3.3.1-desktop.patch
 Patch3:		grip-3.3.1-lame-flac-options.patch
 Patch4:		grip-3.3.1-literal.patch
+Patch5:		grip-3.3.1_warnings.patch
+Patch6:		grip-3.3.1-mga-without-dev-version.patch
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	vte-devel
@@ -41,11 +43,7 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 
 %prep
 %setup -q
-%patch0 -p1 -b .tv
-%patch1 -p1 -b .blind-write-fix
-%patch2 -p1 -b .desktop
-%patch3 -p1 -b .options
-%patch4 -p1 -b .literal
+%apply_patches
 bzcat %SOURCE3 > po/de.po
 
 %build

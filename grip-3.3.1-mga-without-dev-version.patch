@@ -1,0 +1,16 @@
+diff -ur grip-3.3.1.orig/src/grip.c grip-3.3.1/src/grip.c
+--- grip-3.3.1.orig/src/grip.c	2005-06-25 22:00:55.000000000 +0400
++++ grip-3.3.1/src/grip.c	2015-01-02 17:29:01.000000000 +0300
+@@ -317,12 +317,6 @@
+     strcpy(ginfo->version,VERSION);
+ 
+     sscanf(VERSION,"%d.%d.%d",&major,&minor,&point);
+-
+-    /* Check if we have a dev release */
+-    if(minor%2) {
+-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
+-                        _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
+-    }
+   }
+ 
+   g_signal_connect(app, "window-state-event", G_CALLBACK(AppWindowStateCB), ginfo);
