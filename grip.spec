@@ -5,22 +5,14 @@
 
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
-Version:	3.3.1
-Release:	20
+Version:	3.6.1
+Release:	1
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
 URL:		http://sourceforge.net/projects/grip
 Source0:	http://prdownloads.sourceforge.net/grip/%{name}-%{version}.tar.bz2
 Source2:	grip.1.bz2
-Source3:	grip-3.3.1-de.po.bz2
-Patch0:		grip-3.1.7-ogg.patch
-Patch1:		grip-3.0.5-blind-write-fix.patch
-Patch2:		grip-3.3.1-desktop.patch
-Patch3:		grip-3.3.1-lame-flac-options.patch
-Patch4:		grip-3.3.1-literal.patch
-Patch5:		grip-3.3.1_warnings.patch
-Patch6:		grip-3.3.1-mga-without-dev-version.patch
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	vte-devel
@@ -44,27 +36,24 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 %prep
 %setup -q
 %apply_patches
-bzcat %SOURCE3 > po/de.po
 
 %build
 export CC=gcc
 
-%configure2_5x \
+%configure \
 %if %build_id3
-  --enable-id3 \
+    --enable-id3 \
 %else
-  --disable-id3 \
+    --disable-id3 \
 %endif
-%ifarch alpha ppc
-  --disable-cdpar
-%endif
+    --enable-shared-cdpar
 
 %make
 
 %install
-%makeinstall
+%makeinstall_std
 mkdir -p %{buildroot}%{_mandir}/man1
-install -m 644 %SOURCE2 %{buildroot}%{_mandir}/man1/ 
+install -m 644 %{SOURCE2} %{buildroot}%{_mandir}/man1/
 
 #mdk icons
 mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
@@ -76,7 +65,7 @@ convert -scale 16 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/16x16/ap
 rm -f %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 mkdir -p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Grip
 Comment=CD player and ripper
@@ -88,31 +77,14 @@ StartupNotify=true
 Categories=GTK;AudioVideo;Audio;Player;
 EOF
 
-%find_lang %{name}-2.2
+%find_lang %{name}
 
-%clean
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%{update_icon_cache hicolor}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%{clean_icon_cache hicolor}
-%endif
-
-%files -f %{name}-2.2.lang
-%doc ABOUT-NLS AUTHORS CREDITS README ChangeLog TODO  
+%files -f %{name}.lang
+%doc ABOUT-NLS AUTHORS CREDITS README ChangeLog TODO
 %{_bindir}/*
 %{_datadir}/gnome/help/%{name}/
 %{_datadir}/pixmaps/gripicon.png
 %{_datadir}/pixmaps/griptray.png
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_mandir}/man1/*
-%{_datadir}/applications/mandriva-%{name}.desktop
-
-
-
+%{_datadir}/applications/%{name}.desktop
