@@ -11,7 +11,7 @@ License:	GPLv2+
 Epoch:		1
 Group:		Sound
 URL:		http://sourceforge.net/projects/grip
-Source0:	http://prdownloads.sourceforge.net/grip/%{name}-%{version}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/grip/%{name}-%{version}.tar.gz
 Source2:	grip.1.bz2
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(libcurl)
@@ -69,7 +69,7 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Grip
 Comment=CD player and ripper
-Exec=%{_bindir}/%{name} 
+Exec=%{_bindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
