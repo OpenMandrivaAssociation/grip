@@ -35,10 +35,10 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 
 %prep
 %setup -q
-%apply_patches
+#apply_patches
 
 %build
-export CC=gcc
+#export CC=gcc
 
 %configure \
 %if %build_id3
