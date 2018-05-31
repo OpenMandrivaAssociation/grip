@@ -1,4 +1,4 @@
-%define build_id3 0
+%define build_id3 1
 %{?_with_id3: %{expand: %%global build_id3 1}}
 %{?_without_id3: %{expand: %%global build_id3 0}}
 %define _disable_lto 1
