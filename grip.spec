@@ -14,7 +14,7 @@ URL:		http://sourceforge.net/projects/grip
 Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{version}.tar.gz
 Source2:	grip.1.bz2
 BuildRequires:	pkgconfig(libgnomeui-2.0)
-BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(glib1.2)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	vte-devel
 BuildRequires:	imagemagick
