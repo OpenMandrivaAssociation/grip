@@ -41,6 +41,7 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 #export CC=gcc
 
 %configure \
+    --disable-werror \
 %if %build_id3
     --enable-id3 \
 %else
