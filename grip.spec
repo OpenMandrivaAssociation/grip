@@ -1,17 +1,17 @@
-%define build_id3 0
+%define build_id3 1
 %{?_with_id3: %{expand: %%global build_id3 1}}
 %{?_without_id3: %{expand: %%global build_id3 0}}
 %define _disable_lto 1
 
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
-Version:	3.6.1
+Version:	3.8.1
 Release:	1
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
 URL:		http://sourceforge.net/projects/grip
-Source0:	http://prdownloads.sourceforge.net/grip/%{name}-%{version}.tar.gz
+Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{version}.tar.gz
 Source2:	grip.1.bz2
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(libcurl)
@@ -35,12 +35,13 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 
 %prep
 %setup -q
-%apply_patches
+#apply_patches
 
 %build
-export CC=gcc
+#export CC=gcc
 
 %configure \
+    --disable-werror \
 %if %build_id3
     --enable-id3 \
 %else
@@ -53,13 +54,13 @@ export CC=gcc
 %install
 %makeinstall_std
 mkdir -p %{buildroot}%{_mandir}/man1
-install -m 644 %{SOURCE2} %{buildroot}%{_mandir}/man1/
+#install -m 644 %{SOURCE2} %{buildroot}%{_mandir}/man1/
 
 #mdk icons
-mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
-ln -s %{_datadir}/pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
-convert -scale 32 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-convert -scale 16 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
+#mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
+#ln -s %{_datadir}/pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+#convert -scale 32 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+#convert -scale 16 pixmaps/gripicon.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 
 #menu - delete the included one and make our own, because the included one stinks
 rm -f %{buildroot}%{_datadir}/applications/%{name}.desktop
@@ -83,8 +84,11 @@ EOF
 %doc ABOUT-NLS AUTHORS CREDITS README ChangeLog TODO
 %{_bindir}/*
 %{_datadir}/gnome/help/%{name}/
-%{_datadir}/pixmaps/gripicon.png
+#{_datadir}/pixmaps/gripicon.png
 %{_datadir}/pixmaps/griptray.png
+%{_datadir}/pixmaps/grip.png
 %{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 %{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/apps/solid/actions/%{name}-audiocd.desktop
