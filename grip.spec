@@ -84,8 +84,11 @@ EOF
 %doc ABOUT-NLS AUTHORS CREDITS README ChangeLog TODO
 %{_bindir}/*
 %{_datadir}/gnome/help/%{name}/
-%{_datadir}/pixmaps/gripicon.png
+#{_datadir}/pixmaps/gripicon.png
 %{_datadir}/pixmaps/griptray.png
+%{_datadir}/pixmaps/grip.png
 %{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 %{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/apps/solid/actions/%{name}-audiocd.desktop
