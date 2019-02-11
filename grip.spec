@@ -72,3 +72,4 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 %{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/solid/actions/%{name}-audiocd.desktop
+%{_datadir}/solid/actions/grip-audiocd.desktop
