@@ -5,7 +5,7 @@
 
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
-Version:	3.9.0
+Version:	3.10.0
 Release:	1
 License:	GPLv2+
 Epoch:		1
@@ -35,10 +35,8 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 
 %prep
 %setup -q
-#apply_patches
 
 %build
-#export CC=gcc
 
 %configure \
     --disable-werror \
@@ -49,10 +47,10 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 %endif
     --enable-shared-cdpar
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 #mdk icons
 #mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
@@ -74,3 +72,4 @@ disc database servers. Grip works with DigitalDJ to provide a unified
 %{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/solid/actions/%{name}-audiocd.desktop
+%{_datadir}/solid/actions/grip-audiocd.desktop
