@@ -15,7 +15,7 @@ Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{versio
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libcurl)
-BuildRequires:	vte-devel
+BuildRequires:  curl
 BuildRequires:	imagemagick
 Requires:	vorbis-tools
 BuildRequires:	cdda-devel
