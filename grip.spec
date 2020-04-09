@@ -5,7 +5,7 @@
 
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
-Version:	3.10.1
+Version:	4.1.1
 Release:	1
 License:	GPLv2+
 Epoch:		1
@@ -15,7 +15,7 @@ Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{versio
 BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libcurl)
-BuildRequires:	vte-devel
+BuildRequires:  curl
 BuildRequires:	imagemagick
 Requires:	vorbis-tools
 BuildRequires:	cdda-devel
