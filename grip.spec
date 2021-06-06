@@ -5,7 +5,7 @@
 
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
-Version:	4.2.0
+Version:	4.2.1
 Release:	1
 License:	GPLv2+
 Epoch:		1
