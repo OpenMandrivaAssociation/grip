@@ -20,7 +20,7 @@ BuildRequires:	imagemagick
 Requires:	vorbis-tools
 BuildRequires:	cdda-devel
 %if %build_id3
-BuildRequires:	libid3-devel
+BuildRequires:	id3lib-devel
 %endif
 
 %description
