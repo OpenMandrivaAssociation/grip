@@ -12,8 +12,8 @@ Epoch:		1
 Group:		Sound
 URL:		http://sourceforge.net/projects/grip
 Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{version}.tar.gz
-BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:  curl
 BuildRequires:	imagemagick
