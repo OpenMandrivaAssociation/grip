@@ -6,11 +6,11 @@
 Summary:	A CD player and ripper/MP3-encoder front-end
 Name:		grip
 Version:	4.2.4
-Release:	1
+Release:	2
 License:	GPLv2+
 Epoch:		1
 Group:		Sound
-URL:		http://sourceforge.net/projects/grip
+URL:		https://sourceforge.net/projects/grip/
 Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
