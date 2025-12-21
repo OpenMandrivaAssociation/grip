@@ -12,6 +12,11 @@ Epoch:		1
 Group:		Sound
 URL:		https://sourceforge.net/projects/grip/
 Source0:	https://sourceforge.net/projects/grip/files/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libcurl)
